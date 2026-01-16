@@ -44,9 +44,7 @@ box-shadow:0 8px 32px rgba(0,0,0,.2)
 nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
 .logo{font-size:1.8rem;font-weight:700;color:white}
 .nav-links{list-style:none;display:flex;gap:20px}
-.nav-links a{color:white;text-decoration:none;position:relative}
-.nav-links a::after{content:'';position:absolute;width:0;height:2px;background:white;left:0;bottom:-5px;transition:.3s}
-.nav-links a:hover::after{width:100%}
+.nav-links a{color:white;text-decoration:none}
 .menu-toggle{display:none;color:white;font-size:2rem;cursor:pointer}
 
 /* HERO */
@@ -67,10 +65,7 @@ display:flex;align-items:center;justify-content:center;text-align:center;color:w
 .cta-button{
 background:linear-gradient(135deg,#ff6a00,#ee0979);
 padding:15px 40px;
-color:white;
-text-decoration:none;
-border-radius:50px;
-box-shadow:0 0 30px rgba(238,9,121,.8)
+color:white;text-decoration:none;border-radius:50px
 }
 
 /* SECTIONS */
@@ -81,34 +76,40 @@ box-shadow:0 0 30px rgba(238,9,121,.8)
 /* CARDS */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .feature-card{
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
-transition:.3s;
+background:white;padding:25px;border-radius:15px;
+text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.1);
 cursor:pointer
 }
-.feature-card:hover{transform:translateY(-10px);box-shadow:0 0 30px rgba(102,126,234,.6)}
+
+/* VIDEOS */
+.videos{background:#fff}
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px
+}
+.video-card{
+background:#000;border-radius:15px;overflow:hidden;
+box-shadow:0 5px 25px rgba(0,0,0,.2)
+}
+.video-wrapper{
+position:relative;padding-top:56.25%
+}
+.video-wrapper iframe,
+.video-wrapper video{
+position:absolute;top:0;left:0;width:100%;height:100%
+}
 
 /* GALLERY */
 .gallery{background:#eef2ff}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.gallery-item{
-height:250px;border-radius:15px;
-background-size:cover;background-position:center
-}
+.gallery-item{height:250px;border-radius:15px;background-size:cover;background-position:center}
 
 /* CONTACT */
 .contact{background:#1e293b;color:white}
 .contact-form{max-width:500px;margin:auto}
-input,textarea{
-width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none
-}
-button{
-padding:12px 30px;border:none;border-radius:30px;
-background:#ff6a00;color:white;font-size:1rem;cursor:pointer
-}
+input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none}
+button{padding:12px 30px;border:none;border-radius:30px;background:#ff6a00;color:white}
 
 /* FOOTER */
 footer{background:#020617;color:white;text-align:center;padding:20px}
@@ -133,6 +134,7 @@ footer{background:#020617;color:white;text-align:center;padding:20px}
 <li><a href="#home">Home</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#blog">Blog</a></li>
+<li><a href="#videos">Videos</a></li>
 <li><a href="#gallery">Gallery</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -143,66 +145,41 @@ footer{background:#020617;color:white;text-align:center;padding:20px}
 <div>
 <h1>Welcome to FoodWorld4U</h1>
 <p>Discover global flavors & easy recipes</p>
-<a class="cta-button" href="#features">Explore</a>
+<a class="cta-button" href="#videos">Watch Videos</a>
 </div>
 </section>
 
-<section class="section" id="features">
-<h2 class="section-title">Why Choose Us</h2>
-<div class="features">
-<div class="feature-card">🍳 Expert Recipes</div>
-<div class="feature-card">🌍 Global Cuisine</div>
-<div class="feature-card">💡 Cooking Tips</div>
+<section class="section videos" id="videos">
+<h2 class="section-title">Food Videos</h2>
+
+<div class="video-grid">
+
+<div class="video-card" onclick="trackVideo('Indian Street Food')">
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/5qap5aO4i9A" allowfullscreen></iframe>
 </div>
-</section>
-
-<section class="section" id="blog">
-<h2 class="section-title">Latest Blogs</h2>
-<div class="features">
-
-<div class="feature-card" onclick="trackBlog('Best Street Foods in India')">
-🍕 Best Street Foods in India
 </div>
 
-<div class="feature-card" onclick="trackBlog('Healthy Eating Tips')">
-🥗 Healthy Eating Tips
+<div class="video-card" onclick="trackVideo('Easy Home Cooking')">
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/lTTajzrSkCw" allowfullscreen></iframe>
+</div>
 </div>
 
-<div class="feature-card" onclick="trackBlog('Easy Desserts at Home')">
-🍰 Easy Desserts at Home
+<div class="video-card">
+<div class="video-wrapper">
+<video controls>
+<source src="videos/food.mp4" type="video/mp4">
+</video>
+</div>
 </div>
 
 </div>
-</section>
-
-<section class="section gallery" id="gallery">
-<h2 class="section-title">Food Gallery</h2>
-<div class="gallery-grid">
-<div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38')"></div>
-<div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')"></div>
-<div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe')"></div>
-</div>
-</section>
-
-<section class="section contact" id="contact">
-<h2 class="section-title">Contact Us</h2>
-<form class="contact-form" onsubmit="event.preventDefault();alert('Message sent!')">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Email" required>
-<textarea placeholder="Message" required></textarea>
-<button>Send</button>
-</form>
 </section>
 
 <footer>
 © 2026 FoodWorld4U | Made with ❤️
 </footer>
-
-<!-- WhatsApp with UTM tracking -->
-<a href="https://wa.me/917903305894?utm_source=whatsapp&utm_medium=social&utm_campaign=chat"
-target="_blank"
-style="position:fixed;bottom:25px;right:25px;background:#25D366;color:white;
-padding:15px;border-radius:50%;font-size:24px;box-shadow:0 0 20px rgba(37,211,102,.6)">💬</a>
 
 <script>
 function toggleMenu(){
@@ -215,10 +192,8 @@ if(e[0].isIntersecting) sec.classList.add('show');
 }).observe(sec);
 });
 
-function trackBlog(title){
-gtag('event','blog_click',{
-blog_title:title
-});
+function trackVideo(title){
+gtag('event','video_play',{video_title:title});
 }
 </script>
 
