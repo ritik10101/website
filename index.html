@@ -6,121 +6,74 @@
 
 <title>FoodWorld4U - Discover Culinary Excellence</title>
 
-<!-- SEO -->
-<meta name="description" content="FoodWorld4U – Discover delicious recipes, cooking tips, food videos, and global cuisines.">
-<meta name="keywords" content="food blog, recipes, cooking tips, indian food, world cuisine">
+<meta name="description" content="FoodWorld4U – Food blogs with recipes, pictures, and cooking videos.">
+<meta name="keywords" content="food blog, food videos, food images, recipes">
 <meta name="author" content="FoodWorld4U">
-<meta name="robots" content="index, follow">
 
-<!-- Social Preview -->
-<meta property="og:title" content="FoodWorld4U">
-<meta property="og:description" content="Explore recipes, cooking guides, and global cuisines.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
-<meta property="og:url" content="https://ritik10101.github.io/website/">
-
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BT47GMQ1NM"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-BT47GMQ1NM');
-</script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f4f4f4;color:#333;overflow-x:hidden}
+body{font-family:'Poppins',sans-serif;background:#f4f4f4}
 
 /* HEADER */
-header{
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(12px);
-position:fixed;top:0;width:100%;z-index:1000;
-box-shadow:0 8px 32px rgba(0,0,0,.2)
-}
-nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
-.logo{font-size:1.8rem;font-weight:700;color:white}
-.nav-links{list-style:none;display:flex;gap:20px}
+header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(0,0,0,.6)}
+nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;padding:15px}
+.logo{color:#fff;font-size:1.8rem;font-weight:700}
+.nav-links{display:flex;gap:20px;list-style:none}
 .nav-links a{color:white;text-decoration:none}
-.menu-toggle{display:none;color:white;font-size:2rem;cursor:pointer}
 
 /* HERO */
 .hero{
 height:100vh;
-background:linear-gradient(-45deg,#667eea,#764ba2,#ff6a00,#ee0979);
-background-size:400% 400%;
-animation:gradientBG 12s ease infinite;
-display:flex;align-items:center;justify-content:center;text-align:center;color:white
-}
-@keyframes gradientBG{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+background:linear-gradient(-45deg,#ff6a00,#ee0979,#667eea);
+display:flex;align-items:center;justify-content:center;
+color:white;text-align:center
 }
 .hero h1{font-size:3.5rem}
-.hero p{margin:20px 0;font-size:1.2rem}
-.cta-button{
-background:linear-gradient(135deg,#ff6a00,#ee0979);
-padding:15px 40px;
-color:white;text-decoration:none;border-radius:50px
-}
 
 /* SECTIONS */
-.section{padding:80px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(40px);transition:.8s}
-.section.show{opacity:1;transform:none}
+.section{padding:100px 20px;max-width:1200px;margin:auto}
 .section-title{text-align:center;font-size:2.5rem;margin-bottom:40px}
 
-/* CARDS */
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.feature-card{
-background:white;padding:25px;border-radius:15px;
-text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.1);
-cursor:pointer
-}
-
-/* VIDEOS */
-.videos{background:#fff}
-.video-grid{
+/* BLOGS */
+.blogs-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px
 }
-.video-card{
-background:#000;border-radius:15px;overflow:hidden;
-box-shadow:0 5px 25px rgba(0,0,0,.2)
+.blog-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+transition:.3s
 }
+.blog-card:hover{transform:translateY(-10px)}
+
+.blog-img{
+height:220px;
+background-size:cover;
+background-position:center
+}
+.blog-content{padding:20px}
+.blog-content h3{margin-bottom:10px}
+.blog-content p{font-size:.9rem;color:#555}
+
+/* VIDEO */
 .video-wrapper{
-position:relative;padding-top:56.25%
+position:relative;
+padding-top:56.25%;
+margin-top:15px
 }
-.video-wrapper iframe,
-.video-wrapper video{
-position:absolute;top:0;left:0;width:100%;height:100%
+.video-wrapper iframe{
+position:absolute;
+top:0;left:0;width:100%;height:100%;
+border:none
 }
-
-/* GALLERY */
-.gallery{background:#eef2ff}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.gallery-item{height:250px;border-radius:15px;background-size:cover;background-position:center}
-
-/* CONTACT */
-.contact{background:#1e293b;color:white}
-.contact-form{max-width:500px;margin:auto}
-input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none}
-button{padding:12px 30px;border:none;border-radius:30px;background:#ff6a00;color:white}
 
 /* FOOTER */
-footer{background:#020617;color:white;text-align:center;padding:20px}
-
-/* MOBILE */
-@media(max-width:768px){
-.menu-toggle{display:block}
-.nav-links{display:none;position:absolute;right:20px;top:70px;background:#000;padding:15px;border-radius:10px;flex-direction:column}
-.nav-links.show{display:flex}
-.hero h1{font-size:2.5rem}
-}
+footer{text-align:center;padding:20px;background:#020617;color:white}
 </style>
 </head>
 
@@ -129,48 +82,58 @@ footer{background:#020617;color:white;text-align:center;padding:20px}
 <header>
 <nav>
 <div class="logo">FoodWorld4U</div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-<ul class="nav-links" id="menu">
-<li><a href="#home">Home</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#blog">Blog</a></li>
-<li><a href="#videos">Videos</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
+<ul class="nav-links">
+<li><a href="#blogs">Food Blogs</a></li>
 </ul>
 </nav>
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
 <div>
-<h1>Welcome to FoodWorld4U</h1>
-<p>Discover global flavors & easy recipes</p>
-<a class="cta-button" href="#videos">Watch Videos</a>
+<h1>Food Blogs with Videos & Pictures</h1>
+<p>Learn • Cook • Enjoy</p>
 </div>
 </section>
 
-<section class="section videos" id="videos">
-<h2 class="section-title">Food Videos</h2>
+<!-- FOOD BLOGS -->
+<section class="section" id="blogs">
+<h2 class="section-title">Our Food Blogs</h2>
 
-<div class="video-grid">
+<div class="blogs-grid">
 
-<div class="video-card" onclick="trackVideo('Indian Street Food')">
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/5qap5aO4i9A" allowfullscreen></iframe>
-</div>
-</div>
-
-<div class="video-card" onclick="trackVideo('Easy Home Cooking')">
+<!-- BLOG 1 -->
+<div class="blog-card">
+<div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38')"></div>
+<div class="blog-content">
+<h3>Indian Street Food</h3>
+<p>Explore India’s famous street foods with pictures and cooking video.</p>
 <div class="video-wrapper">
 <iframe src="https://www.youtube.com/embed/lTTajzrSkCw" allowfullscreen></iframe>
 </div>
 </div>
+</div>
 
-<div class="video-card">
+<!-- BLOG 2 -->
+<div class="blog-card">
+<div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe')"></div>
+<div class="blog-content">
+<h3>Healthy Food Recipes</h3>
+<p>Simple healthy meals with step-by-step video guide.</p>
 <div class="video-wrapper">
-<video controls>
-<source src="videos/food.mp4" type="video/mp4">
-</video>
+<iframe src="https://www.youtube.com/embed/5qap5aO4i9A" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+<!-- BLOG 3 -->
+<div class="blog-card">
+<div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')"></div>
+<div class="blog-content">
+<h3>Easy Desserts</h3>
+<p>Sweet desserts with images and easy recipe videos.</p>
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/_jOMIdietUQ" allowfullscreen></iframe>
+</div>
 </div>
 </div>
 
@@ -178,24 +141,8 @@ footer{background:#020617;color:white;text-align:center;padding:20px}
 </section>
 
 <footer>
-© 2026 FoodWorld4U | Made with ❤️
+© 2026 FoodWorld4U | Food Blogs with ❤️
 </footer>
-
-<script>
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("show");
-}
-
-document.querySelectorAll('.section').forEach(sec=>{
-new IntersectionObserver(e=>{
-if(e[0].isIntersecting) sec.classList.add('show');
-}).observe(sec);
-});
-
-function trackVideo(title){
-gtag('event','video_play',{video_title:title});
-}
-</script>
 
 </body>
 </html>
